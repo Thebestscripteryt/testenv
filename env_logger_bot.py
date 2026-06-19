@@ -11,12 +11,15 @@ import asyncio
 import re
 import json
 import os
+from dotenv import load_dotenv
 import tempfile
 import subprocess
 from datetime import datetime
 from typing import Dict, List, Optional, Any
 import aiohttp
 import io
+
+load_dotenv()
 
 # ============ CONFIG ============
 BOT_TOKEN = os.getenv("BOT_TOKEN")
