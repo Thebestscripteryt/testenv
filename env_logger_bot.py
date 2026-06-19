@@ -675,8 +675,7 @@ def create_error_embed(title: str, description: str) -> discord.Embed:
 
 # ============ RUN ============
 if __name__ == "__main__":
-    if BOT_TOKEN == "YOUR_BOT_TOKEN_HERE":
-        print("ERROR: Set your bot token!")
-        print("Get one at: https://discord.com/developers/applications")
+    if not BOT_TOKEN:
+        print("ERROR: BOT_TOKEN not set!")
     else:
         bot.run(BOT_TOKEN)
