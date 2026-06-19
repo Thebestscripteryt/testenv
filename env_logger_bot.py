@@ -19,7 +19,7 @@ import aiohttp
 import io
 
 # ============ CONFIG ============
-BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 COMMAND_PREFIX = ".env"
 ALLOWED_GUILDS = []  # Leave empty for all guilds
 MAX_FILE_SIZE = 8 * 1024 * 1024  # 8MB
