@@ -1,12 +1,16 @@
-import threading
-from env_logger_bot import bot, BOT_TOKEN
+from flask import Flask
+from threading import Thread
 
-def run_bot():
-    bot.run(BOT_TOKEN)
+app = Flask(__name__)
 
-if __name__ == "__main__":
-    print("Starting web server...")
+@app.route("/")
+def home():
+    return "Bot is alive!"
 
-    threading.Thread(target=run_bot).start()
-
+def run():
     app.run(host="0.0.0.0", port=10000)
+
+def keep_alive():
+    t = Thread(target=run)
+    t.daemon = True  # important so it doesn't block shutdown
+    t.start()
